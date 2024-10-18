@@ -16,6 +16,8 @@ document.getElementById("d6").addEventListener("mouseleave", d6_leave);
 document.getElementById("d8").addEventListener("mouseenter",  d8_enter);
 document.getElementById("d8").addEventListener("mouseleave", d8_leave);
 document.getElementById("enter").addEventListener("click", greeting);
+document.getElementById("grubbin").addEventListener("click", different_image);
+
 
 /*** Functions ***/
 
@@ -65,23 +67,18 @@ document.getElementById("die").textContent = "wait a second..."
 function greeting() {
 
     let name = document.getElementById("user_input").value;
-    document.getElementById("greeting").textContent = `Hello ${name}!`
-
+    document.getElementById("greeting").textContent = `Hello ${name}!`;
+    document.getElementById("user_input").value = "";
 }
 
+let which_pic = 1
 
+function different_image() {
 
-// Part 1
-
-
-
-// Part 2
-
-
-
-// Part 3
-
-
-
-// Part 4
-
+    if (which_pic == 1 ){
+        document.getElementById("grubbin").src = "./images/vikavolt.webp";
+        which_pic = 2}
+    else {
+        document.getElementById("grubbin").src = "./images/grubbin.jpg";
+        which_pic = 1}
+}
